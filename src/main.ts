@@ -13,6 +13,9 @@ import 'virtual:svg-icons-register';
 
 import globalComponents from '@/components';
 
+//引入全局的样式
+import '@/styles/index.scss';
+
 //创建实例
 const app = createApp(App);
 
