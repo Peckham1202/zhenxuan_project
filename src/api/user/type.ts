@@ -12,27 +12,20 @@ export interface IResponseData {
 }
 
 export interface ILoginData {
-  token: string;
+  token?: string;
+  message?: string;
 }
 
 export interface ILoginResponseData extends IResponseData {
   data: ILoginData;
 }
 
-export interface IUserInfo {
-  userId: string;
+export interface IUserInfoData {
+  name: string;
   avatar: string;
-  username: string;
-  password: string;
-  desc: string;
   roles: string[];
   buttons: string[];
   routes: string[];
-  token: string;
-}
-
-export interface IUserInfoData {
-  checkUser: IUserInfo;
 }
 
 export interface IUserInfoResponseData extends IResponseData {
