@@ -1,21 +1,17 @@
 <template>
-  <div>
-    <h1>我是APP</h1>
-  </div>
+  <router-view></router-view>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script setup lang="ts"></script>
 
-export default defineComponent({
-  setup () {
-    
+<style scoped lang="scss">
+.box {
+  width: 600px;
+  height: 400px;
+  background: black;
 
-    return {}
+  h1 {
+    color: white;
   }
-})
-</script>
-
-<style scoped>
-
+}
 </style>
