@@ -41,6 +41,7 @@ import { reactive, ref } from 'vue';
 import useUserStore from '@/store/modules/user';
 import { useRouter } from 'vue-router';
 import { ElNotification } from 'element-plus';
+import { getTimeInfo } from '@/utils/time';
 
 let $router = useRouter();
 
@@ -56,7 +57,8 @@ async function login() {
     $router.push('/');
     ElNotification({
       type: 'success',
-      message: '登录成功',
+      title: `Hi ${getTimeInfo()}好`,
+      message: '欢迎回来',
     });
   } catch (error) {
     console.log(error);
