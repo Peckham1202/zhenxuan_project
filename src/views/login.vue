@@ -5,7 +5,12 @@
     </el-col>
     <el-col :span="12" :xs="24">
       <!-- 登录的表单 -->
-      <el-form class="login_form">
+      <el-form
+        class="login_form"
+        :model="loginForm"
+        :rules="rules"
+        ref="loginFormRef"
+      >
         <h1>Hello</h1>
         <h2>欢迎来到小煌甄选</h2>
         <el-form-item prop="username">
@@ -40,7 +45,7 @@ import { Lock, User } from '@element-plus/icons-vue';
 import { reactive, ref } from 'vue';
 import useUserStore from '@/store/modules/user';
 import { useRouter } from 'vue-router';
-import { ElNotification } from 'element-plus';
+import { ElNotification, FormInstance } from 'element-plus';
 import { getTimeInfo } from '@/utils/time';
 
 let $router = useRouter();
@@ -48,8 +53,17 @@ let $router = useRouter();
 let loginForm = reactive({ username: '', password: '' });
 let useStore = useUserStore();
 let isLoading = ref(false);
+
+const loginFormRef = ref<FormInstance>();
+
 //登录按钮回调
 async function login() {
+  try {
+    await loginFormRef.value?.validate();
+  } catch (error) {
+    return;
+  }
+
   isLoading.value = true;
   try {
     await useStore.userLogin(loginForm);
@@ -71,6 +85,27 @@ async function login() {
     isLoading.value = false;
   }
 }
+
+function validatorUsername(_rule: any, value: string, callback: any) {
+  if (value.length >= 5) {
+    callback();
+  } else {
+    callback(new Error('账号长度至少5位'));
+  }
+}
+
+function validatorPassword(_rule: any, value: string, callback: any) {
+  if (value.length >= 6) {
+    callback();
+  } else {
+    callback(new Error('密码长度至少6位'));
+  }
+}
+
+const rules = {
+  username: [{ trigger: 'change', validator: validatorUsername }],
+  password: [{ trigger: 'change', validator: validatorPassword }],
+};
 </script>
 <style scoped lang="scss">
 .login_container {
