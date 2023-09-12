@@ -5,6 +5,7 @@ export const constantRoute = [
     name: 'login',
     meta: {
       title: '登录',
+      icon: 'User',
     },
   },
   {
@@ -14,6 +15,7 @@ export const constantRoute = [
     name: 'layout',
     meta: {
       title: '布局',
+      icon: 'Filter',
     },
     children: [
       {
@@ -22,6 +24,7 @@ export const constantRoute = [
         name: 'home',
         meta: {
           title: '主页',
+          icon: 'House',
         },
       },
     ],
@@ -32,6 +35,7 @@ export const constantRoute = [
     name: 'ceshi',
     meta: {
       title: '测试',
+      icon: 'Document',
     },
     children: [
       {
@@ -40,6 +44,7 @@ export const constantRoute = [
         name: 'ceshi',
         meta: {
           title: '测试1',
+          icon: 'Notebook',
         },
       },
       {
@@ -48,6 +53,7 @@ export const constantRoute = [
         name: 'ceshi',
         meta: {
           title: '测试2',
+          icon: 'Memo',
         },
       },
     ],
@@ -58,6 +64,7 @@ export const constantRoute = [
     name: '404',
     meta: {
       title: '404',
+      icon: 'CircleCloseFilled',
     },
   },
   {
@@ -66,6 +73,7 @@ export const constantRoute = [
     name: 'Any',
     meta: {
       title: '任意路由',
+      icon: 'QuestionFilled',
     },
   },
 ];
