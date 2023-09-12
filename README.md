@@ -8,3 +8,10 @@
 - ts
 - element-plus
 - pinia
+
+## 启动
+
+执行 **pnpm install** 加载依赖的模块
+
+再执行 **pnpm run dev** 即可启动服务器并打开页面
+
