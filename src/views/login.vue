@@ -1,8 +1,6 @@
 <template>
   <el-row class="login_container">
-    <el-col :span="12" :xs="0">
-      <h1>我是占位的</h1>
-    </el-col>
+    <el-col :span="12" :xs="0"></el-col>
     <el-col :span="12" :xs="24">
       <!-- 登录的表单 -->
       <el-form
@@ -68,7 +66,7 @@ async function login() {
   try {
     await useStore.userLogin(loginForm);
 
-    $router.push('/');
+    $router.push('/home');
     ElNotification({
       type: 'success',
       title: `Hi ${getTimeInfo()}好`,

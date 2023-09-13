@@ -13,8 +13,7 @@
     <div class="layout_tabbar">456</div>
     <!-- 内容展示 -->
     <div class="layout_main">
-      789
-      <p style="height: 10000px"></p>
+      <Main></Main>
     </div>
   </div>
 </template>
@@ -25,6 +24,8 @@ import Logo from './logo/index.vue';
 
 //引入菜单组件
 import Menu from './menu/index.vue';
+
+import Main from './main/index.vue';
 
 //获取用户小仓库
 import useUserStore from '@/store/modules/user';
